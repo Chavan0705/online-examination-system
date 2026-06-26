@@ -1,3 +1,4 @@
+# Compilation and build artifacts
 target/
 *.class
 *.log
@@ -8,5 +9,20 @@ target/
 .project
 .factorypath
 .DS_Store
-*.war
+
+# Java package files
 *.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# BlueJ and MTJ
+*.ctxt
+.mtj.tmp/
+
+# Crash logs
+hs_err_pid*
+replay_pid*
