@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/online_exam_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root123</property>
+
+        <!-- JDBC connection pool (use the built-in pool for simplicity) -->
+        <property name="hibernate.connection.pool_size">10</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Disable the second-level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Update database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Enable Thread-bound Session Context -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Annotated entity classes -->
+        <mapping class="com.exam.model.Admin"/>
+        <mapping class="com.exam.model.Student"/>
+        <mapping class="com.exam.model.Subject"/>
+        <mapping class="com.exam.model.Exam"/>
+        <mapping class="com.exam.model.Question"/>
+        <mapping class="com.exam.model.Result"/>
+        <mapping class="com.exam.model.ActivityLog"/>
+    </session-factory>
+</hibernate-configuration>
